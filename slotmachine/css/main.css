@@ -1,0 +1,12 @@
+﻿body {
+    background-image: url(../img/starwarsslotmachine.png);
+    background-repeat: no-repeat;
+    background-color: #000000;
+    
+}
+
+ul#playerStats {
+    list-style-type: none;
+    padding: 0;
+    margin: 5px;
+}
