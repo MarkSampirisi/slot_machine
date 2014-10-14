@@ -74,6 +74,7 @@ function showWinMessage() {
     checkJackPot();
 }
 
+
 /* Utility function to show a loss message and reduce player money */
 function showLossMessage() {
     playerMoney -= playerBet;
@@ -91,25 +92,34 @@ function checkRange(value, lowerBounds, upperBounds) {
     }
 }
 
-/* When this function is called it determines the betLine results.
-e.g. Bar - Orange - Banana */
+/* When this function is called it determines the betLine results and displays the associated images. */
 function Reels() {
-    var betLine = [" ", " ", " "];
+    var betLine = [];
+    var myImg;
     var outCome = [0, 0, 0];
+
 
     for (var spin = 0; spin < 3; spin++) {
         outCome[spin] = Math.floor((Math.random() * 65) + 1);
         switch (outCome[spin]) {
             case checkRange(outCome[spin], 1, 27):  // 41.5% probability
-                betLine[spin] = "blank";
+
+                
+                myImg = "img/blankImage.png";
+                betLine[spin] = myImg;
+                document.getElementById('resultImg' + [spin]).src = myImg;
                 blanks++;
                 break;
             case checkRange(outCome[spin], 28, 37): // 15.4% probability
-                betLine[spin] = "Grapes";
+                myImg = "img/spinButton.png";
+                betLine[spin] = myImg;
+                document.getElementById('resultImg' + [spin]).src = myImg;
                 grapes++;
                 break;
             case checkRange(outCome[spin], 38, 46): // 13.8% probability
-                betLine[spin] = "Banana";
+                myImg = "img/millenium-falcon.png";
+                betLine[spin] = myImg;
+                document.getElementById('resultImg' + [spin]).src = myImg;
                 bananas++;
                 break;
             case checkRange(outCome[spin], 47, 54): // 12.3% probability
@@ -129,7 +139,9 @@ function Reels() {
                 bells++;
                 break;
             case checkRange(outCome[spin], 65, 65): //  1.5% probability
-                betLine[spin] = "Seven";
+                myImg = "img/150px-Republic_credit_symbol.svg.png";
+                betLine[spin] = myImg;
+                document.getElementById('resultImg' + [spin]).src = myImg;
                 sevens++;
                 break;
         }
