@@ -21,8 +21,8 @@ var blanks = 0;
 /* Utility function to show Player Stats */
 function showPlayerStats() {
     winRatio = winNumber / turn;
-    $("#jackpot").text("Jackpot: " + jackpot);
-    $("#playerMoney").text("Player Money: " + playerMoney);
+    $("#jackpot").text(jackpot);
+    $("#playerMoney").text(playerMoney);
     $("#playerTurn").text("Turn: " + turn);
     $("#playerWins").text("Wins: " + winNumber);
     $("#playerLosses").text("Losses: " + lossNumber);
