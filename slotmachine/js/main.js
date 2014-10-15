@@ -55,14 +55,13 @@ function resetAll() {
     winRatio = 0;
 }
 
-
 /* Check to see if the player won the jackpot */
 function checkJackPot() {
     /* compare two random values */
     var jackPotTry = Math.floor(Math.random() * 51 + 1);
     var jackPotWin = Math.floor(Math.random() * 51 + 1);
     if (jackPotTry == jackPotWin) {
-        alert("You Won the $" + jackpot + " Jackpot!!");
+        alert("The force is strong with this one. You Won the " + jackpot + " Credit Jackpot!!");
         playerMoney += jackpot;
         jackpot = 1000;
     }
@@ -71,7 +70,7 @@ function checkJackPot() {
 /* Utility function to show a win message and increase player money */
 function showWinMessage() {
     playerMoney += winnings;
-    $("div#winOrLose>p").text("You Won: $" + winnings);
+    $("div#winOrLose>p").text(winnings + " Credits!");
     resetFruitTally();
     checkJackPot();
 }
@@ -80,6 +79,7 @@ function showWinMessage() {
 /* Utility function to show a loss message and reduce player money */
 function showLossMessage() {
     playerMoney -= playerBet;
+    jackpot += +playerBet;  //player loss is added to jackpot
     $("div#winOrLose>p").text("You Lost!");
     resetFruitTally();
 }
@@ -105,8 +105,6 @@ function Reels() {
         outCome[spin] = Math.floor((Math.random() * 65) + 1);
         switch (outCome[spin]) {
             case checkRange(outCome[spin], 1, 27):  // 41.5% probability
-
-
                 myImg = "img/Lightsaber_blank.png";
                 betLine[spin] = myImg;
                 document.getElementById('resultImg' + [spin]).src = myImg;
@@ -250,3 +248,18 @@ $("#spinButton").click(function () {
 
 });
 
+$("#resetButton").click(function () {
+    if (confirm("Are you sure you want to reset? \nAll stats will be lost!")) {
+        resetAll();
+        showPlayerStats();
+    }
+});
+
+$("#resetButton").click(function () {
+        resetAll();
+        showPlayerStats();
+});
+
+$("#exitButton").click(function () {
+    close();
+});

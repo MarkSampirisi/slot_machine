@@ -66,16 +66,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="css\main.css" />
-    <Content Include="img\150px-Republic_credit_symbol.svg.png" />
     <Content Include="img\blankImage.png" />
     <Content Include="img\Deathstar.png" />
     <Content Include="img\Droideka.png" />
+    <Content Include="img\exitButton.png" />
     <Content Include="img\galacticCredit.png" />
     <Content Include="img\hanSolo.png" />
     <Content Include="img\jabba.png" />
     <Content Include="img\Lightsaber_blank.png" />
     <Content Include="img\millenium-falcon.png" />
     <Content Include="img\R2-D2.png" />
+    <Content Include="img\resetButton.png" />
     <Content Include="img\spinButton.png" />
     <Content Include="img\starwarsslotmachine.png" />
     <Content Include="index.html" />

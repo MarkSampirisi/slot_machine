@@ -13,8 +13,22 @@ ul#playerStats {
 
 div#spinButton {
     position: absolute;
-    left: 270px;
-    top: 750px;
+    left: 303px;
+    top: 760px;
+
+}
+
+div#resetButton {
+    position: absolute;
+    left: 50px;
+    top: 760px;
+
+}
+
+div#exitButton {
+    position: absolute;
+    left: 555px;
+    top: 760px;
 
 }
 
