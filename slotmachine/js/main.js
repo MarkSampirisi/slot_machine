@@ -104,42 +104,50 @@ function Reels() {
         switch (outCome[spin]) {
             case checkRange(outCome[spin], 1, 27):  // 41.5% probability
 
-                
-                myImg = "img/blankImage.png";
+
+                myImg = "img/Lightsaber_blank.png";
                 betLine[spin] = myImg;
                 document.getElementById('resultImg' + [spin]).src = myImg;
                 blanks++;
                 break;
             case checkRange(outCome[spin], 28, 37): // 15.4% probability
-                myImg = "img/spinButton.png";
+                myImg = "img/hanSolo.png";
                 betLine[spin] = myImg;
                 document.getElementById('resultImg' + [spin]).src = myImg;
                 grapes++;
                 break;
             case checkRange(outCome[spin], 38, 46): // 13.8% probability
-                myImg = "img/millenium-falcon.png";
+                myImg = "img/R2-D2.png";
                 betLine[spin] = myImg;
                 document.getElementById('resultImg' + [spin]).src = myImg;
                 bananas++;
                 break;
             case checkRange(outCome[spin], 47, 54): // 12.3% probability
-                betLine[spin] = "Orange";
+                myImg = "img/Droideka.png";
+                betLine[spin] = myImg;
+                document.getElementById('resultImg' + [spin]).src = myImg;
                 oranges++;
                 break;
             case checkRange(outCome[spin], 55, 59): //  7.7% probability
-                betLine[spin] = "Cherry";
+                myImg = "img/millenium-falcon.png";
+                betLine[spin] = myImg;
+                document.getElementById('resultImg' + [spin]).src = myImg;
                 cherries++;
                 break;
             case checkRange(outCome[spin], 60, 62): //  4.6% probability
-                betLine[spin] = "Bar";
+                myImg = "img/jabba.png";
+                betLine[spin] = myImg;
+                document.getElementById('resultImg' + [spin]).src = myImg;
                 bars++;
                 break;
             case checkRange(outCome[spin], 63, 64): //  3.1% probability
-                betLine[spin] = "Bell";
+                myImg = "img/Deathstar.png";
+                betLine[spin] = myImg;
+                document.getElementById('resultImg' + [spin]).src = myImg;
                 bells++;
                 break;
             case checkRange(outCome[spin], 65, 65): //  1.5% probability
-                myImg = "img/150px-Republic_credit_symbol.svg.png";
+                myImg = "img/galacticCredit.png";
                 betLine[spin] = myImg;
                 document.getElementById('resultImg' + [spin]).src = myImg;
                 sevens++;
