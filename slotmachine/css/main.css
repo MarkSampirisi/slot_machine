@@ -1,8 +1,23 @@
-﻿
+﻿/* 
+Source Filename: SlotMachine
+Author: Mark Sampirisi
+Last Modified By: Mark Sampirisi
+Date last Modified: Oct 16, 2014
+Description: This is a Star Wars themed slot machine game. User can enter a bet amount to gain or lose money depending 
+on their spin result. The spin result is calculated using javascript, drawing 3 random numbers between 1 and 65. Each
+number has an associated image that is displayed on the webpage. Losses are added to a jackpot, which can be won by
+drawing a specific combination of images. Statistics such as # of wins, win/loss ratio, etc, are collected and 
+displayed to the user.
+Current Version: v. 1.0
+*/
+
+/* custom font */
 @font-face {
     font-family: 'Starjedi'; /* custom star wars font courtesy of user "Boba Fonts" http://www.dafont.com/star-jedi.font (100% free) */
     src: url('Starjedi.ttf') format('truetype');
 }
+
+/* body styling */
 body {
     background-image: url(../img/starwarsslotmachine.png);
     background-repeat: no-repeat;
@@ -11,7 +26,7 @@ body {
     color: yellow;
 }
 
-
+/* player stats styling */
 ul#playerStats {
     list-style-type: none;
     padding: 0;
@@ -61,6 +76,7 @@ li#playerMoney {
 
 }
 
+/* player stats header */
 h2 {
     position: absolute;
     top: 871px;
@@ -126,6 +142,7 @@ div#result {
     border: none;
 }
 
+/* specific styling for each Reel() image */
 div#result img {
     padding-left: 5px;
     padding-right: 5px;

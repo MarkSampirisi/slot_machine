@@ -1,4 +1,15 @@
-﻿/// <reference path="jquery.js" />
+﻿// Source Filename: SlotMachine
+// Author: Mark Sampirisi
+// Last Modified By: Mark Sampirisi
+// Date last Modified: Oct 16, 2014
+// Description: This is a Star Wars themed slot machine game. User can enter a bet amount to gain or lose money depending 
+// on their spin result. The spin result is calculated using javascript, drawing 3 random numbers between 1 and 65. Each
+// number has an associated image that is displayed on the webpage. Losses are added to a jackpot, which can be won by
+// drawing a specific combination of images. Statistics such as # of wins, win/loss ratio, etc, are collected and 
+// displayed to the user.
+// Current Version: v. 1.0
+
+/// <reference path="jquery.js" />
 
 //sounds (buffer automatically)
 var intro = new Audio("sounds/darthvader_expectingyou.wav"); // intro sound
