@@ -28,7 +28,7 @@ function showPlayerStats() {
     $("#playerTurn").text("Turn: " + turn);
     $("#playerWins").text("Wins: " + winNumber);
     $("#playerLosses").text("Losses: " + lossNumber);
-    $("#playerWinRatio").text("Win Ratio: " + (winRatio * 100).toFixed(2) + "%");
+    $("#playerWinRatio").text("Win Ratio: " + (winRatio * 100).toFixed(2) + " percent"); /* the percent sign is missing from this custom font... */
 }
 
 /* Utility function to reset all fruit tallies */
