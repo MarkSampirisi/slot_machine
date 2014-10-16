@@ -1,4 +1,15 @@
 ﻿/// <reference path="jquery.js" />
+
+//sounds (buffer automatically)
+var intro = new Audio("sounds/darthvader_expectingyou.wav"); // intro sound
+var problemSound = new Audio("sounds/c3po_yourfault.wav"); // sound file that plays when an error has occured
+var jackpotSound = new Audio("sounds/darthvader_taughtyouwell.wav"); // sound file that plays when user wins the jackpot
+var loseSound = new Audio("sounds/jabba_laugh.wav"); // sound that plays when user has run out of money
+var spinSound = new Audio("sounds/spinButtonSound.wav"); // sound that plays when the spin button is clicked
+
+intro.play();
+
+// Tally
 var playerMoney = 1000;
 var winnings = 0;
 var jackpot = 5000;
@@ -60,6 +71,7 @@ function checkJackPot() {
     var jackPotTry = Math.floor(Math.random() * 51 + 1);
     var jackPotWin = Math.floor(Math.random() * 51 + 1);
     if (jackPotTry == jackPotWin) {
+        jackpotSound.play();
         alert("The force is strong with this one. You Won the " + jackpot + " Credit Jackpot!!");
         playerMoney += jackpot;
         jackpot = 1000;
@@ -222,24 +234,29 @@ $("#spinButton").click(function () {
     playerBet = $("div#betEntry>input").val();
 
     if (playerMoney == 0) {
+        loseSound.play();
         if (confirm("You ran out of Money! \nDo you want to play again?")) {
             resetAll();
             showPlayerStats();
         }
     }
     else if (playerBet > playerMoney) {
+        problemSound.play();
         alert("You don't have enough Money to place that bet.");
     }
     else if (playerBet <= 0) {
+        problemSound.play();
         alert("All bets must be a positive $ amount.");
     }
     else if (playerBet <= playerMoney) {
+        spinSound.play();
         spinResult = Reels();
         determineWinnings();
         turn++;
         showPlayerStats();
     }
     else {
+        problemSound.play();
         alert("Please enter a valid bet amount");
     }
 

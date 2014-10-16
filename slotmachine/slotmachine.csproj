@@ -83,6 +83,11 @@
     <Content Include="index.html" />
     <Content Include="js\jquery.js" />
     <Content Include="js\main.js" />
+    <Content Include="sounds\c3po_yourfault.wav" />
+    <Content Include="sounds\darthvader_expectingyou.wav" />
+    <Content Include="sounds\darthvader_taughtyouwell.wav" />
+    <Content Include="sounds\jabba_laugh.wav" />
+    <Content Include="sounds\spinButtonSound.wav" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
