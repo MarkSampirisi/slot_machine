@@ -7,14 +7,13 @@ var playerBet = 0;
 var winNumber = 0;
 var lossNumber = 0;
 var spinResult;
-var fruits = "";
 var winRatio = 0;
-var grapes = 0;
-var bananas = 0;
-var oranges = 0;
-var cherries = 0;
-var bars = 0;
-var bells = 0;
+var r2d2 = 0;
+var solo = 0;
+var droideka = 0;
+var falcon = 0;
+var jabba = 0;
+var deathstar = 0;
 var sevens = 0;
 var blanks = 0;
 
@@ -33,12 +32,12 @@ function showPlayerStats() {
 
 /* Utility function to reset all fruit tallies */
 function resetFruitTally() {
-    grapes = 0;
-    bananas = 0;
-    oranges = 0;
-    cherries = 0;
-    bars = 0;
-    bells = 0;
+    r2d2 = 0;
+    solo = 0;
+    droideka = 0;
+    falcon = 0;
+    jabba = 0;
+    deathstar = 0;
     sevens = 0;
     blanks = 0;
 }
@@ -111,40 +110,40 @@ function Reels() {
                 blanks++;
                 break;
             case checkRange(outCome[spin], 28, 37): // 15.4% probability
-                myImg = "img/hanSolo.png";
-                betLine[spin] = myImg;
-                document.getElementById('resultImg' + [spin]).src = myImg;
-                grapes++;
-                break;
-            case checkRange(outCome[spin], 38, 46): // 13.8% probability
                 myImg = "img/R2-D2.png";
                 betLine[spin] = myImg;
                 document.getElementById('resultImg' + [spin]).src = myImg;
-                bananas++;
+                r2d2++;
+                break;
+            case checkRange(outCome[spin], 38, 46): // 13.8% probability
+                myImg = "img/hanSolo.png";
+                betLine[spin] = myImg;
+                document.getElementById('resultImg' + [spin]).src = myImg;
+                solo++;
                 break;
             case checkRange(outCome[spin], 47, 54): // 12.3% probability
                 myImg = "img/Droideka.png";
                 betLine[spin] = myImg;
                 document.getElementById('resultImg' + [spin]).src = myImg;
-                oranges++;
+                droideka++;
                 break;
             case checkRange(outCome[spin], 55, 59): //  7.7% probability
                 myImg = "img/millenium-falcon.png";
                 betLine[spin] = myImg;
                 document.getElementById('resultImg' + [spin]).src = myImg;
-                cherries++;
+                falcon++;
                 break;
             case checkRange(outCome[spin], 60, 62): //  4.6% probability
                 myImg = "img/jabba.png";
                 betLine[spin] = myImg;
                 document.getElementById('resultImg' + [spin]).src = myImg;
-                bars++;
+                jabba++;
                 break;
             case checkRange(outCome[spin], 63, 64): //  3.1% probability
                 myImg = "img/Deathstar.png";
                 betLine[spin] = myImg;
                 document.getElementById('resultImg' + [spin]).src = myImg;
-                bells++;
+                deathstar++;
                 break;
             case checkRange(outCome[spin], 65, 65): //  1.5% probability
                 myImg = "img/galacticCredit.png";
@@ -160,43 +159,43 @@ function Reels() {
 /* This function calculates the player's winnings, if any */
 function determineWinnings() {
     if (blanks == 0) {
-        if (grapes == 3) {
+        if (r2d2 == 3) {
             winnings = playerBet * 10;
         }
-        else if (bananas == 3) {
+        else if (solo == 3) {
             winnings = playerBet * 20;
         }
-        else if (oranges == 3) {
+        else if (droideka == 3) {
             winnings = playerBet * 30;
         }
-        else if (cherries == 3) {
+        else if (falcon == 3) {
             winnings = playerBet * 40;
         }
-        else if (bars == 3) {
+        else if (jabba == 3) {
             winnings = playerBet * 50;
         }
-        else if (bells == 3) {
+        else if (deathstar == 3) {
             winnings = playerBet * 75;
         }
         else if (sevens == 3) {
             winnings = playerBet * 100;
         }
-        else if (grapes == 2) {
+        else if (r2d2 == 2) {
             winnings = playerBet * 2;
         }
-        else if (bananas == 2) {
+        else if (solo == 2) {
             winnings = playerBet * 2;
         }
-        else if (oranges == 2) {
+        else if (droideka == 2) {
             winnings = playerBet * 3;
         }
-        else if (cherries == 2) {
+        else if (falcon == 2) {
             winnings = playerBet * 4;
         }
-        else if (bars == 2) {
+        else if (jabba == 2) {
             winnings = playerBet * 5;
         }
-        else if (bells == 2) {
+        else if (deathstar == 2) {
             winnings = playerBet * 10;
         }
         else if (sevens == 2) {
@@ -231,13 +230,11 @@ $("#spinButton").click(function () {
     else if (playerBet > playerMoney) {
         alert("You don't have enough Money to place that bet.");
     }
-    else if (playerBet < 0) {
+    else if (playerBet <= 0) {
         alert("All bets must be a positive $ amount.");
     }
     else if (playerBet <= playerMoney) {
         spinResult = Reels();
-        fruits = spinResult[0] + " - " + spinResult[1] + " - " + spinResult[2];
-        $("div#result>p").text(fruits);
         determineWinnings();
         turn++;
         showPlayerStats();
@@ -248,6 +245,7 @@ $("#spinButton").click(function () {
 
 });
 
+/* When the reset button is clicked, game statitstics return to default values. User must confirm */
 $("#resetButton").click(function () {
     if (confirm("Are you sure you want to reset? \nAll stats will be lost!")) {
         resetAll();
@@ -255,11 +253,9 @@ $("#resetButton").click(function () {
     }
 });
 
-$("#resetButton").click(function () {
-        resetAll();
-        showPlayerStats();
-});
-
+/* When the exit button is clicked, the slot machine tab is closed. User must confirm */
 $("#exitButton").click(function () {
-    close();
+    if (confirm("Are you sure you want to exit?")) {
+        close();
+    }
 });

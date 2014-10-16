@@ -1,6 +1,6 @@
 ﻿
 @font-face {
-    font-family: 'Starjedi';
+    font-family: 'Starjedi'; /* custom star wars font courtesy of user "Boba Fonts" http://www.dafont.com/star-jedi.font (100% free) */
     src: url('Starjedi.ttf') format('truetype');
 }
 body {
@@ -113,6 +113,7 @@ input#playerBet {
     text-align: center;
     width: 150px;
     color: yellow;
+    font-family: "StarJedi";
 
 }
 /*******************************************************************************/

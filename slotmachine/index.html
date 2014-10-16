@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿<!-- Source Filename: SlotMachine
+     Author: Mark Sampirisi
+     Last Modified By: Mark Sampirisi
+     Date last Modified: Oct 17, 2014
+     Description: This is a Star Wars themed slot machine game. User can enter a bet amount to gain or lose money depending 
+     on their spin result. The spin result is calculated using javascript, drawing 3 random numbers between 1 and 65. Each
+     number has an associated image that is displayed on the webpage. Losses are added to a jackpot, which can be won by
+     drawing a specific combination of images. Statistics such as # of wins, win/loss ratio, etc, are collected and 
+     displayed to the user.
+     Revision History: ??? -->
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -9,6 +20,7 @@
 <body>
     <div>
         <div>
+            <!-- Statistics -->
             <h2>Player Statistics: </h2>
             <ul id="playerStats">
                 <li id="jackpot">5000</li>
@@ -20,26 +32,26 @@
             </ul>
         </div>
 
+        <!-- Bet entry input box -->
         <div id="betEntry">
-
             <input id="playerBet" name="points" value="10">
-
         </div>
-        <!-- buttons (spin, reset, exit) -->
 
+        <!-- buttons (spin, reset, exit) -->
         <div id="spinButton"><img src="img/spinButton.png" /></div>
         <div id="resetButton"><img src="img/resetButton.png" /></div>
         <div id="exitButton"><img src="img/exitButton.png" /></div>
 
     </div>
 
-    <!-- Reel images; Shows appropriate image based on spin result; source initialized to blankImage.png -->
+    <!-- Reel images; Shows appropriate image based on spin result; Image sources are initialized to blankImage.png -->
     <div id="result">
         <img id="resultImg0" src="img/blankImage.png" width="220" height="238" />
         <img id="resultImg1" src="img/blankImage.png" width="220" height="238" />
         <img id="resultImg2" src="img/blankImage.png" width="220" height="238" />
     </div>
 
+    <!-- Win/Loss text -->
     <div id="winOrLose">
         <p></p>
     </div>
