@@ -31,7 +31,7 @@ function showPlayerStats() {
 }
 
 /* Utility function to reset all fruit tallies */
-function resetFruitTally() {
+function resetTally() {
     r2d2 = 0;
     solo = 0;
     droideka = 0;
@@ -70,7 +70,7 @@ function checkJackPot() {
 function showWinMessage() {
     playerMoney += winnings;
     $("div#winOrLose>p").text(winnings + " Credits!");
-    resetFruitTally();
+    resetTally();
     checkJackPot();
 }
 
@@ -80,7 +80,7 @@ function showLossMessage() {
     playerMoney -= playerBet;
     jackpot += +playerBet;  //player loss is added to jackpot
     $("div#winOrLose>p").text("You Lost!");
-    resetFruitTally();
+    resetTally();
 }
 
 /* Utility function to check if a value falls within a range of bounds */
