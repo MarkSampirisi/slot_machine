@@ -8,6 +8,7 @@
 // drawing a specific combination of images. Statistics such as # of wins, win/loss ratio, etc, are collected and 
 // displayed to the user.
 // Current Version: v. 1.0
+// Version History: https://github.com/MarkSampirisi/slot_machine/commits/master
 
 /// <reference path="jquery.js" />
 
